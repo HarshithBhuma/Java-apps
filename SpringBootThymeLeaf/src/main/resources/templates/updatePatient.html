@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body bgcolor = "wheat">
+
+<h1>Patient Portal</h1>
+<br><br><br>
+
+<a href="/patient/addPatient">Add Patient</a> |
+<a href="/patient/viewPatient">View Patient</a> |
+
+<a href="login">Login</a> |
+<a href="register">Register</a>
+<br><br><br>
+
+<form th:action="@{/patient/update}" th:object="${updatePatient}" method="post">
+<input type="hidden" name="pid" th:value="${updatePatient.pid}">
+<input type="text" name="name" th:value="${updatePatient.name}">
+<input type="number" name="age" th:value="${updatePatient.age}">
+<input type="text" name="location" th:value="${updatePatient.location}">
+<input type="submit" value="Update patient">
+
+</form>
+
+
+</body>
+
+</html>
