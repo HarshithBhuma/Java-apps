@@ -1,0 +1,22 @@
+<html>
+<body bgcolor = "wheat">
+
+<h1>Patient Portal</h1>
+<br><br><br>
+
+<a href="/patient/addPatient">Add Patient</a> |
+<a href="/patient/viewPatient">View Patient</a> |
+
+<a href="/user/login">Login</a> |
+<a href="/user/register">Register</a>
+<br><br><br>
+
+<form th:action="@{/user/login}" th:object="${user}" method="post">
+
+<input type="text" th:field="*{email}" placeholder="Enter email">
+<input type="text" th:field="*{password}" placeholder="Enter password">
+<input type="submit" value="login">
+
+</form>
+</body>
+</html>

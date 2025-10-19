@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body bgcolor = "wheat">
+
+<h1>Patient Portal</h1>
+<br><br><br>
+
+<a href="/patient/addPatient">Add Patient</a> |
+<a href="/patient/viewPatient">View Patient</a> |
+
+<a href="login">Login</a> |
+<a href="register">Register</a>
+<br><br><br>
+
+<table border="2" width="400" height="200" cellPadding="20" align="center">
+
+<tr>
+<td>ID</td><td>Name</td><td>Age</td><td>Location</td>
+</tr>
+
+<tr th:each="patient: ${patient}">
+<td th:text="${patient.pid}"></td>
+<td th:text="${patient.name}"></td>
+<td th:text="${patient.age}"></td>
+<td th:text="${patient.location}"></td>
+<td><a th:href="@{'/patient/deletePatient/'+ ${patient.pid}}">Delete</a></td>
+<td><a th:href="@{'/patient/updatePatient/'+${patient.pid}}">Update</a></td>
+</tr>
+
+</table>
+
+
+
+</body>
+</html>
